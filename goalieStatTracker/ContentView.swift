@@ -12,10 +12,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Welcome to Goalie Stat Tracker")
+                // stat card
+                StatCardView(stats: [0, 0,0]).background(Color.blue)
+                // previous games
+                
                 HStack {
                     NavigationLink(destination: scoreKeeperView()) {
                         Text("New Game")

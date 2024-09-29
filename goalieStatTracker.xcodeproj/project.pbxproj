@@ -16,6 +16,7 @@
 		1BD3D3EE2CA647FF00448225 /* goalieStatTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D3ED2CA647FF00448225 /* goalieStatTrackerUITestsLaunchTests.swift */; };
 		1BD3D3FB2CA64A7C00448225 /* scoreKeeperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D3FA2CA64A7B00448225 /* scoreKeeperHelper.swift */; };
 		1BD3D3FD2CA6592D00448225 /* scoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D3FC2CA6592D00448225 /* scoreKeeper.swift */; };
+		1BD3D3FF2CA8FEEC00448225 /* statCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D3FE2CA8FEEC00448225 /* statCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1BD3D3ED2CA647FF00448225 /* goalieStatTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalieStatTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1BD3D3FA2CA64A7B00448225 /* scoreKeeperHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreKeeperHelper.swift; sourceTree = "<group>"; };
 		1BD3D3FC2CA6592D00448225 /* scoreKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreKeeper.swift; sourceTree = "<group>"; };
+		1BD3D3FE2CA8FEEC00448225 /* statCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				1BD3D3CF2CA647FE00448225 /* goalieStatTrackerApp.swift */,
 				1BD3D3D12CA647FE00448225 /* ContentView.swift */,
+				1BD3D3FE2CA8FEEC00448225 /* statCard.swift */,
 				1BD3D3FC2CA6592D00448225 /* scoreKeeper.swift */,
 				1BD3D3FA2CA64A7B00448225 /* scoreKeeperHelper.swift */,
 				1BD3D3D32CA647FF00448225 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				1BD3D3FD2CA6592D00448225 /* scoreKeeper.swift in Sources */,
 				1BD3D3FB2CA64A7C00448225 /* scoreKeeperHelper.swift in Sources */,
 				1BD3D3D22CA647FE00448225 /* ContentView.swift in Sources */,
+				1BD3D3FF2CA8FEEC00448225 /* statCard.swift in Sources */,
 				1BD3D3D02CA647FE00448225 /* goalieStatTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
