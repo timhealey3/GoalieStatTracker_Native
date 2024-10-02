@@ -8,23 +8,6 @@
 import Foundation
 import SwiftData
 
-enum ShotType {
-    case breakAway
-    case TwoOnOne
-    case rebound
-    case wristShot
-    case slapShot
-    case deflection
-    case wrapAround
-    case ownGoal
-    case other
-}
-
-enum GameState {
-    case win
-    case lose
-    case tie
-}
 
 @Model
 class Game {
@@ -33,16 +16,16 @@ class Game {
     let gameDate: Date
     let goals: Int
     let goalCord: [[Float]]
-    let goalType: [[ShotType]]
-    let shots: [[Int]]
+    let goalType: [String]
+    let shots: Int
     let shotCord: [[Float]]
     let shutOut: Bool
-    let gameState: GameState
+    let gameState: Int
     let overTime: Bool
     let shootOut: Bool
     let notes: String
     
-    init(id: Int, opponent: String, gameDate: Date, goals: Int, goalCord: [[Float]], goalType: [[ShotType]], shots: [[Int]], shotCord: [[Float]], shutOut: Bool, gameState: GameState, overTime: Bool, shootOut: Bool, notes: String) {
+    init(id: Int, opponent: String, gameDate: Date, goals: Int, goalCord: [[Float]], goalType: [String], shots: Int, shotCord: [[Float]], shutOut: Bool, gameState: Int, overTime: Bool, shootOut: Bool, notes: String) {
         self.id = id
         self.opponent = opponent
         self.gameDate = gameDate

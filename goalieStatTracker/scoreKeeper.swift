@@ -10,8 +10,11 @@ import SwiftUI
 import SwiftData
 
 struct scoreKeeperView: View {
+    @Query private var games: [Game]
+    @Environment(\.modelContext) private var context
     @StateObject var scoreKeeper = scoreKeeperHelper()
     
+    @State private var newDate = Date.now
     
     var body: some View {
         
@@ -20,12 +23,18 @@ struct scoreKeeperView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Score Keeper")
-//            Button(action: {scoreKeeper.addGoal()}) {
-//                Label("\(scoreKeeper.currentGoals)", systemImage: "folder.badge.plus")
-//            }
-//            Button(action: {scoreKeeper.subGoal()}) {
-//                Label("\(scoreKeeper.currentGoals)", systemImage: "folder.badge.plus")
-//            }
+            Button(action: {scoreKeeper.addGoal()}) {
+                Label("\(scoreKeeper.currentGoals)", systemImage: "folder.badge.plus")
+            }
+            Button(action: {scoreKeeper.subGoal()}) {
+                Label("\(scoreKeeper.currentGoals)", systemImage: "folder.badge.plus")
+            }
+            Button("Save") {
+                let newGame = Game(id: games.count, opponent: scoreKeeper.currentOpponent, gameDate: newDate, goals: scoreKeeper.currentGoals, goalCord: scoreKeeper.currentGoalCords, goalType: scoreKeeper.currentShotType, shots: scoreKeeper.currentShots, shotCord: scoreKeeper.currentShotCords, shutOut: scoreKeeper.isShutOut(), gameState: scoreKeeper.getgameState(), overTime: scoreKeeper.currentOT, shootOut: scoreKeeper.currentShootout, notes: scoreKeeper.currentNotes)
+                context.insert(newGame)
+                
+                newDate = .now
+            }
         }
         .navigationTitle("Score Keeper")
     }
