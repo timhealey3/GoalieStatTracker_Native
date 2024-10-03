@@ -19,6 +19,7 @@
 		1BD3D3FF2CA8FEEC00448225 /* statCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D3FE2CA8FEEC00448225 /* statCard.swift */; };
 		1BD3D4012CA9064200448225 /* historyStatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4002CA9064200448225 /* historyStatCard.swift */; };
 		1BD3D4032CA9F80500448225 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4022CA9F80500448225 /* Game.swift */; };
+		1BD3D4072CAE32C900448225 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4062CAE32C900448225 /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1BD3D3FE2CA8FEEC00448225 /* statCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statCard.swift; sourceTree = "<group>"; };
 		1BD3D4002CA9064200448225 /* historyStatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyStatCard.swift; sourceTree = "<group>"; };
 		1BD3D4022CA9F80500448225 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1BD3D4062CAE32C900448225 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				1BD3D3FC2CA6592D00448225 /* scoreKeeper.swift */,
 				1BD3D3FA2CA64A7B00448225 /* scoreKeeperHelper.swift */,
 				1BD3D4022CA9F80500448225 /* Game.swift */,
+				1BD3D4062CAE32C900448225 /* Team.swift */,
 				1BD3D3D32CA647FF00448225 /* Assets.xcassets */,
 				1BD3D3D52CA647FF00448225 /* goalieStatTracker.entitlements */,
 				1BD3D3D62CA647FF00448225 /* Preview Content */,
@@ -278,6 +281,7 @@
 				1BD3D3FB2CA64A7C00448225 /* scoreKeeperHelper.swift in Sources */,
 				1BD3D4032CA9F80500448225 /* Game.swift in Sources */,
 				1BD3D4012CA9064200448225 /* historyStatCard.swift in Sources */,
+				1BD3D4072CAE32C900448225 /* Team.swift in Sources */,
 				1BD3D3D22CA647FE00448225 /* ContentView.swift in Sources */,
 				1BD3D3FF2CA8FEEC00448225 /* statCard.swift in Sources */,
 				1BD3D3D02CA647FE00448225 /* goalieStatTrackerApp.swift in Sources */,

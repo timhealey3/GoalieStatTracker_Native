@@ -12,7 +12,7 @@ import SwiftData
 @Model
 class Game {
     let id: Int
-    let opponent: String
+    let opponentID: Int
     let gameDate: Date
     let goals: Int
     let goalCord: [[Float]]
@@ -25,9 +25,9 @@ class Game {
     let shootOut: Bool
     let notes: String
     
-    init(id: Int, opponent: String, gameDate: Date, goals: Int, goalCord: [[Float]], goalType: [String], shots: Int, shotCord: [[Float]], shutOut: Bool, gameState: Int, overTime: Bool, shootOut: Bool, notes: String) {
+    init(id: Int, opponentID: Int, gameDate: Date, goals: Int, goalCord: [[Float]], goalType: [String], shots: Int, shotCord: [[Float]], shutOut: Bool, gameState: Int, overTime: Bool, shootOut: Bool, notes: String) {
         self.id = id
-        self.opponent = opponent
+        self.opponentID = opponentID
         self.gameDate = gameDate
         self.goals = goals
         self.goalCord = goalCord

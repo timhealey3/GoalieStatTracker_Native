@@ -23,27 +23,42 @@ class scoreKeeperHelper : ObservableObject{
     @Published var currentShotType: [String] = []
     @Published var currentGoalCords: [[Float]] = []
     @Published var currentShotCords: [[Float]] = []
+    var currentOpponentID: Int = 0
     
-    func resetScoreKeeper() {
+    func fetchOpponentID(from context: ModelContext) -> [Team] {
+        let fetchDescriptor = FetchDescriptor<Team>(
+            predicate: #Predicate { $0.teamName == currentOpponent }
+        )
+        do {
+            let results = try context.fetch(fetchDescriptor)
+            return results
+        } catch {
+            print("Failed to fetch team: \(error)")
+            return []
+        }
+    }
+    
+    
+    func resetScoreKeeper() -> Void {
         currentGoals = 0
         currentShots = 0
         currentShotType = []
         currentGoalCords = []
     }
     
-    func addGoal() {
+    func addGoal() -> Void {
         currentGoals += 1
         print("goal!!!")
     }
     
-    func subGoal() {
+    func subGoal() -> Void {
         if ((currentGoals - 1) >= 0) {
             currentGoals -= 1
         }
         print("goal!!!")
     }
     
-    func addShot() {
+    func addShot() -> Void {
         currentShots += 1;
         print("shot!!")
     }

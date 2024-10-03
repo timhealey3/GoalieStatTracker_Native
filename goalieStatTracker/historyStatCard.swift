@@ -21,7 +21,7 @@ struct HistoryStatCard: View {
             // game cards
             List(games, id: \.id) { game in
                  HStack {
-                     Text(game.opponent)
+                     Text(game.notes)
                      Spacer()
                      Text(game.gameDate, format: .dateTime.month(.wide).day().year())
                  }
