@@ -8,26 +8,38 @@
 import Foundation
 import SwiftData
 
+enum GameOutcome: String, CaseIterable, Identifiable {
+    case win, lose, tie
+    var id: Self { self }
+}
+
+enum GameOutcomeOT: String, CaseIterable, Identifiable {
+    case none, overtime, shootout
+    var id: Self { self }
+}
+
 class scoreKeeperHelper : ObservableObject{
 
-    @Published var currentGoals: Int = 0
-    @Published var currentShots: Int = 0
-    @Published var currentOpponent: String = ""
-    @Published var currentWin: Bool = false
-    @Published var currentLose: Bool = false
-    @Published var currentTie: Bool = false
-    @Published var currentOT: Bool = false
-    @Published var currentShootout: Bool = false
-    @Published var currentNotes: String = ""
+    @Published var goals: Int = 0
+    @Published var shots: Int = 0
+    @Published var opponent: String = ""
+    @Published var winInd: Bool = false
+    @Published var loseInd: Bool = false
+    @Published var tieInd: Bool = false
+    @Published var gameOutcomeVar: GameOutcome = .win
+    @Published var gameOutcomeOTVar: GameOutcomeOT = .none
+    @Published var OtInd: Bool = false
+    @Published var ShootoutInd: Bool = false
+    @Published var Notes: String = ""
     @Published var shotType: [String] = ["Slapshot", "Wristshot", "Breakaway", "Rebound"]
-    @Published var currentShotType: [String] = []
-    @Published var currentGoalCords: [[Float]] = []
-    @Published var currentShotCords: [[Float]] = []
-    var currentOpponentID: Int = 0
+    @Published var ShotType: [String] = []
+    @Published var GoalCords: [[Float]] = []
+    @Published var ShotCords: [[Float]] = []
+    var opponentID: Int = 0
     
     func fetchOpponentID(from context: ModelContext) -> [Team] {
         let fetchDescriptor = FetchDescriptor<Team>(
-            predicate: #Predicate { $0.teamName == currentOpponent }
+            predicate: #Predicate { $0.teamName == opponent }
         )
         do {
             let results = try context.fetch(fetchDescriptor)
@@ -40,48 +52,31 @@ class scoreKeeperHelper : ObservableObject{
     
     
     func resetScoreKeeper() -> Void {
-        currentGoals = 0
-        currentShots = 0
-        currentShotType = []
-        currentGoalCords = []
-    }
-    
-    func addGoal() -> Void {
-        currentGoals += 1
-        print("goal!!!")
-    }
-    
-    func subGoal() -> Void {
-        if ((currentGoals - 1) >= 0) {
-            currentGoals -= 1
-        }
-        print("goal!!!")
-    }
-    
-    func addShot() -> Void {
-        currentShots += 1;
-        print("shot!!")
+        goals = 0
+        shots = 0
+        ShotType = []
+        GoalCords = []
     }
     
     func isShutOut() -> Bool {
-        return currentGoals == 0
+        return goals == 0
     }
     
     func getgameState() -> Int {
-        if (currentWin) {
-            if (currentWin && currentOT && !currentShootout) {
+        if (winInd) {
+            if (winInd && OtInd && !ShootoutInd) {
                 return 1;
             }
-            else if (currentWin && currentOT && !currentShootout) {
+            else if (winInd && OtInd && !ShootoutInd) {
                 return 2;
             }
             return 0;
         }
-        else if (currentLose) {
-            if (currentLose && currentOT && !currentShootout) {
+        else if (loseInd) {
+            if (loseInd && OtInd && !ShootoutInd) {
                 return 4;
             }
-            else if (currentLose && currentOT && !currentShootout) {
+            else if (loseInd && OtInd && !ShootoutInd) {
                 return 5;
             }
             return 3;
