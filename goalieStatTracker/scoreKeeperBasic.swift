@@ -1,32 +1,23 @@
 //
-//  scoreKeeper.swift
+//  scoreKeeperBasic.swift
 //  goalieStatTracker
 //
-//  Created by Tim Healey on 9/26/24.
+//  Created by Tim Healey on 10/4/24.
 //
 
 import Foundation
 import SwiftUI
 import SwiftData
 
-struct scoreKeeperView: View {
+struct scoreKeeperBasicView: View {
     @Query private var games: [Game]
     @Environment(\.modelContext) private var context
-    @StateObject var scoreKeeper = scoreKeeperHelper()
+    @StateObject var scoreKeeper = scoreKeeperBasicHelper()
     @State private var newDate = Date.now
     
     var body: some View {
         
         VStack {
-            VStack {
-                Picker("Period", selection: $scoreKeeper.currentPeriodsVar) {
-                    ForEach(Periods.allCases) { period in
-                        Text(period.rawValue.capitalized)
-                    }
-                }
-                Spacer()
-            }
-            .pickerStyle(.segmented)
             Text("Score Keeper")
             TextField(
                 "Opponent Name",
@@ -35,20 +26,22 @@ struct scoreKeeperView: View {
             Text(scoreKeeper.opponent)
             // Shots
             HStack {
-                Button(action: {scoreKeeper.subtractShot()}
+                Button(action: {
+                    scoreKeeper.shots
+                    = scoreKeeper.shots > 0 ? scoreKeeper.shots - 1 : 0}
                 ) {
-                    Label("Shots \(scoreKeeper.getShots())", systemImage: "minus.circle")
+                    Label("Shots \(scoreKeeper.shots)", systemImage: "minus.circle")
                 }
-                Button(action: {scoreKeeper.addShot()}) {
+                Button(action: {scoreKeeper.shots += 1}) {
                     Label("", systemImage: "plus.circle")
                 }
             }
             // Goals
             HStack {
-                Button(action: {scoreKeeper.subtractGoal()}) {
-                    Label("Goals \(scoreKeeper.getGoals())", systemImage: "minus.circle")
+                Button(action: {scoreKeeper.goals = scoreKeeper.goals > 0 ? scoreKeeper.goals - 1 : 0}) {
+                    Label("Goals \(scoreKeeper.goals)", systemImage: "minus.circle")
                 }
-                Button(action: {scoreKeeper.addGoal()}) {
+                Button(action: {scoreKeeper.goals += 1}) {
                     Label("", systemImage: "plus.circle")
                 }
             }
@@ -69,8 +62,7 @@ struct scoreKeeperView: View {
 
             
             Button("Save") {
-// todo change this for first/secnd/third vars
-                let newGame = Game(id: games.count + 1, opponentID: scoreKeeper.opponentID, gameDate: newDate, goals: scoreKeeper.firstGoals, goalCord: scoreKeeper.GoalCords, goalType: scoreKeeper.shotType, shots: scoreKeeper.firstShots, shotCord: scoreKeeper.ShotCords, shutOut: scoreKeeper.isShutOut(), gameState: scoreKeeper.getgameState(), overTime: scoreKeeper.OtInd, shootOut: scoreKeeper.ShootoutInd, notes: scoreKeeper.Notes)
+                let newGame = Game(id: games.count + 1, opponentID: scoreKeeper.opponentID, gameDate: newDate, goals: scoreKeeper.goals, goalCord: scoreKeeper.GoalCords, goalType: scoreKeeper.shotType, shots: scoreKeeper.shots, shotCord: scoreKeeper.ShotCords, shutOut: scoreKeeper.isShutOut(), gameState: scoreKeeper.getgameState(), overTime: scoreKeeper.OtInd, shootOut: scoreKeeper.ShootoutInd, notes: scoreKeeper.Notes)
                 context.insert(newGame)
                 newDate = .now
             }
@@ -79,9 +71,9 @@ struct scoreKeeperView: View {
     }
 }
 
-struct scoreKeeperPreview: PreviewProvider {
+struct scoreKeeperBasicPreview: PreviewProvider {
     static var previews: some View {
-        scoreKeeperView()
+        scoreKeeperBasicView()
             .modelContainer(for: Game.self, inMemory: true)
     }
 }

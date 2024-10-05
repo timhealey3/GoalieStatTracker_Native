@@ -19,7 +19,7 @@ struct ContentView: View {
                 HistoryStatCard()
                     .modelContainer(for: Game.self)
                 HStack {
-                    NavigationLink(destination: scoreKeeperView()) {
+                    NavigationLink(destination: gameCreatorView()) {
                         Text("New Game")
                     }.frame(maxHeight: .infinity, alignment: .bottom)
                     NavigationLink(destination: scoreKeeperView()) {
