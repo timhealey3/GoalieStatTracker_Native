@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    
     var body: some View {
         NavigationStack {
             VStack {
@@ -18,20 +17,9 @@ struct ContentView: View {
                 // previous games
                 HistoryStatCard()
                     .modelContainer(for: Game.self)
-                HStack {
-                    NavigationLink(destination: gameCreatorView()) {
-                        Text("New Game")
-                    }.frame(maxHeight: .infinity, alignment: .bottom)
-                    NavigationLink(destination: scoreKeeperView()) {
-                        Text("Statistics")
-                    }.frame(maxHeight: .infinity, alignment: .bottom)
-                    NavigationLink(destination: scoreKeeperView()) {
-                        Text("Profile")
-                    }.frame(maxHeight: .infinity, alignment: .bottom)
-                }
+                navBar()
+                .navigationTitle("Home")
             }
-            .padding()
-            .navigationTitle("Home")
         }
     }
 }

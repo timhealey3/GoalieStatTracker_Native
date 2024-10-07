@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftData
 
 struct scoreKeeperBasicView: View {
+    let opponent: String
     @Query private var games: [Game]
     @Environment(\.modelContext) private var context
     @StateObject var scoreKeeper = scoreKeeperBasicHelper()
@@ -18,7 +19,7 @@ struct scoreKeeperBasicView: View {
     var body: some View {
         
         VStack {
-            Text("Score Keeper")
+            Text("Basic Score Keeper")
             TextField(
                 "Opponent Name",
                 text: $scoreKeeper.opponent
@@ -67,13 +68,15 @@ struct scoreKeeperBasicView: View {
                 newDate = .now
             }
         }
-        .navigationTitle("Score Keeper")
+        navBar()
+        .navigationTitle("Basic Score Keeper")
     }
 }
 
 struct scoreKeeperBasicPreview: PreviewProvider {
     static var previews: some View {
-        scoreKeeperBasicView()
+        let opponent = "some team"
+        scoreKeeperBasicView(opponent: opponent)
             .modelContainer(for: Game.self, inMemory: true)
     }
 }

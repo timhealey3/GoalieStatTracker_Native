@@ -24,6 +24,10 @@
 		1BD3D40B2CB0E1DD00448225 /* scoreKeperBasicHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D40A2CB0E1DD00448225 /* scoreKeperBasicHelper.swift */; };
 		1BD3D40D2CB0EC4000448225 /* gameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D40C2CB0EC4000448225 /* gameCreator.swift */; };
 		1BD3D40F2CB0EC9200448225 /* gameCreatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D40E2CB0EC9200448225 /* gameCreatorHelper.swift */; };
+		1BD3D4112CB31BE300448225 /* navBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4102CB31BE300448225 /* navBar.swift */; };
+		1BD3D4132CB3815200448225 /* stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4122CB3815100448225 /* stats.swift */; };
+		1BD3D4152CB3821300448225 /* statsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4142CB3821300448225 /* statsHelper.swift */; };
+		1BD3D4172CB3860600448225 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3D4162CB3860600448225 /* profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		1BD3D40A2CB0E1DD00448225 /* scoreKeperBasicHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreKeperBasicHelper.swift; sourceTree = "<group>"; };
 		1BD3D40C2CB0EC4000448225 /* gameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCreator.swift; sourceTree = "<group>"; };
 		1BD3D40E2CB0EC9200448225 /* gameCreatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameCreatorHelper.swift; sourceTree = "<group>"; };
+		1BD3D4102CB31BE300448225 /* navBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navBar.swift; sourceTree = "<group>"; };
+		1BD3D4122CB3815100448225 /* stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stats.swift; sourceTree = "<group>"; };
+		1BD3D4142CB3821300448225 /* statsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statsHelper.swift; sourceTree = "<group>"; };
+		1BD3D4162CB3860600448225 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,10 @@
 			children = (
 				1BD3D3CF2CA647FE00448225 /* goalieStatTrackerApp.swift */,
 				1BD3D3D12CA647FE00448225 /* ContentView.swift */,
+				1BD3D4162CB3860600448225 /* profile.swift */,
+				1BD3D4122CB3815100448225 /* stats.swift */,
+				1BD3D4142CB3821300448225 /* statsHelper.swift */,
+				1BD3D4102CB31BE300448225 /* navBar.swift */,
 				1BD3D40C2CB0EC4000448225 /* gameCreator.swift */,
 				1BD3D40E2CB0EC9200448225 /* gameCreatorHelper.swift */,
 				1BD3D4002CA9064200448225 /* historyStatCard.swift */,
@@ -289,14 +301,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD3D4152CB3821300448225 /* statsHelper.swift in Sources */,
 				1BD3D3FD2CA6592D00448225 /* scoreKeeper.swift in Sources */,
+				1BD3D4132CB3815200448225 /* stats.swift in Sources */,
 				1BD3D3FB2CA64A7C00448225 /* scoreKeeperHelper.swift in Sources */,
 				1BD3D4032CA9F80500448225 /* Game.swift in Sources */,
 				1BD3D4012CA9064200448225 /* historyStatCard.swift in Sources */,
 				1BD3D4072CAE32C900448225 /* Team.swift in Sources */,
 				1BD3D40D2CB0EC4000448225 /* gameCreator.swift in Sources */,
 				1BD3D40B2CB0E1DD00448225 /* scoreKeperBasicHelper.swift in Sources */,
+				1BD3D4172CB3860600448225 /* profile.swift in Sources */,
 				1BD3D4092CB0E1AB00448225 /* scoreKeeperBasic.swift in Sources */,
+				1BD3D4112CB31BE300448225 /* navBar.swift in Sources */,
 				1BD3D40F2CB0EC9200448225 /* gameCreatorHelper.swift in Sources */,
 				1BD3D3D22CA647FE00448225 /* ContentView.swift in Sources */,
 				1BD3D3FF2CA8FEEC00448225 /* statCard.swift in Sources */,

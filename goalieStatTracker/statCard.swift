@@ -35,11 +35,3 @@ struct StatCardView: View {
         }
     }
 }
-
-struct StatCardPreview: PreviewProvider {
-    static var stats = [0, 0, 0]
-    static var previews: some View {
-        StatCardView(stats: stats) // Correctly pass stats to StatCardView
-            .previewLayout(.fixed(width: 400, height: 60)) // Fix layout
-    }
-}

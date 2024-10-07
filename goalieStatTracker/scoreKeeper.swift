@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftData
 
 struct scoreKeeperView: View {
+    let opponent: String
     @Query private var games: [Game]
     @Environment(\.modelContext) private var context
     @StateObject var scoreKeeper = scoreKeeperHelper()
@@ -27,7 +28,7 @@ struct scoreKeeperView: View {
                 Spacer()
             }
             .pickerStyle(.segmented)
-            Text("Score Keeper")
+            Text("Advanced Score Keeper")
             TextField(
                 "Opponent Name",
                 text: $scoreKeeper.opponent
@@ -75,13 +76,15 @@ struct scoreKeeperView: View {
                 newDate = .now
             }
         }
-        .navigationTitle("Score Keeper")
+        navBar()
+        .navigationTitle("Adv. Score Keeper")
     }
 }
 
 struct scoreKeeperPreview: PreviewProvider {
     static var previews: some View {
-        scoreKeeperView()
+        let opponent = "some team"
+        scoreKeeperView(opponent: opponent)
             .modelContainer(for: Game.self, inMemory: true)
     }
 }
